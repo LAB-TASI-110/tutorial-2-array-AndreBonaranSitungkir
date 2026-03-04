@@ -9,23 +9,19 @@ int main() {
     int max_val = INT_MIN; // Inisialisasi nilai maksimum dengan angka terkecil yang mungkin (dari <limits.h>)
 
     // 1. Meminta input untuk jumlah bilangan (n)
-    printf("Masukkan jumlah bilangan (n): "); // Ini adalah prompt untuk user
     scanf("%d", &n); // Membaca nilai n dari keyboard
 
     // 2. Memastikan n adalah angka positif, kalau tidak, mungkin ada yang salah input
     if (n <= 0) {
-        printf("Jumlah bilangan harus positif. Program dihentikan.\n");
         return 1; // Mengindikasikan program berakhir dengan error
     }
 
     // 3. Melakukan perulangan sebanyak n kali untuk membaca setiap bilangan
     for (int i = 0; i < n; i++) {
-        printf("Masukkan bilangan ke-%d (antara -100 dan 100): ", i + 1);
         scanf("%d", &bilangan);
 
         // 4. Validasi batasan bilangan (-100 sampai 100)
         if (bilangan < -100 || bilangan > 100) {
-            printf("Bilangan di luar rentang -100 hingga 100. Mohon ulangi input untuk bilangan ini.\n");
             i--; // Mengulang iterasi saat ini agar user input lagi untuk bilangan yang sama
             continue; // Lanjut ke iterasi berikutnya (tapi karena i-- akan mengulang yang sama)
         }

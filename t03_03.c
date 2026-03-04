@@ -17,23 +17,19 @@ int main() {
     float max_rata_rata_berturut = -FLT_MAX; // Inisialisasi dengan nilai float negatif terkecil
 
     // 1. Meminta input untuk jumlah bilangan (n)
-    printf("Masukkan jumlah bilangan (n): ");
     scanf("%d", &n);
 
     // 2. Memastikan n adalah angka positif
     if (n <= 0) {
-        printf("Jumlah bilangan harus positif. Program dihentikan.\n");
         return 1; // Keluar dengan kode error
     }
 
     // 3. Melakukan perulangan sebanyak n kali untuk membaca setiap bilangan
     for (int i = 0; i < n; i++) {
-        printf("Masukkan bilangan ke-%d (antara -100 dan 100): ", i + 1);
         scanf("%d", &bilangan);
 
         // 4. Validasi batasan bilangan (-100 sampai 100)
         if (bilangan < -100 || bilangan > 100) {
-            printf("Bilangan di luar rentang -100 hingga 100. Mohon ulangi input untuk bilangan ini.\n");
             i--; // Mengulang iterasi saat ini agar user input lagi untuk bilangan yang sama
             continue; // Lanjut ke iterasi berikutnya (yang akan mengulang yang sama karena i--)
         }
